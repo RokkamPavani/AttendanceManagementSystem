@@ -49,7 +49,7 @@ public class Attendance
 		try 
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","root");
+			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","");
 			Statement st=con.createStatement();
 			ResultSet rs=st.executeQuery("select * from student order by name desc");
 			System.out.printf("%-5s | %-15s | %-10s | %-20s | %-15s | %-10s%n", "ID", "Name", "Age", "Email", "Phone","Class_Attended");
@@ -73,7 +73,7 @@ public class Attendance
 		try 
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","root");
+			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","");
 			Statement st=con.createStatement();
 			ResultSet rs=st.executeQuery("select * from student order by name asc");
 			System.out.printf("%-5s | %-15s | %-10s | %-20s | %-15s | %-10s%n", "ID", "Name", "Age", "Email", "Phone","Class_Attended");
@@ -97,7 +97,7 @@ public class Attendance
 		try 
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","root");
+			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","");
 			Statement st=con.createStatement();
 			System.out.println("Enter ID");
 			ResultSet rs=st.executeQuery("select * from student where id ='"+s.nextInt()+"'");
@@ -122,7 +122,7 @@ public class Attendance
 		try 
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","root");
+			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","");
 			Statement st=con.createStatement();
 			System.out.println("Enter keyword");
 			ResultSet rs=st.executeQuery("select * from student where name like '"+s.next()+"%'");
@@ -147,7 +147,7 @@ public class Attendance
 		try 
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","root");
+			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","");
 			PreparedStatement st=con.prepareStatement("update student set name=? where  id= ?");
 			System.out.println("Enter new name");
 			st.setString(1, s.next());
@@ -169,7 +169,7 @@ public class Attendance
 		try 
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","root");
+			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","");
 			PreparedStatement st=con.prepareStatement("delete from student where id=?");
 			System.out.println("Enter id");
 			st.setInt(1, s.nextInt());
@@ -189,7 +189,7 @@ public class Attendance
 		try 
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","root");
+			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","");
 			PreparedStatement st=con.prepareStatement("update student set cls_attended=? where  id= ?");
 			System.out.println("Enter classes attended");
 			st.setInt(1, s.nextInt());
@@ -211,7 +211,7 @@ public class Attendance
 		try 
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","root");
+			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","");
 			Statement st=con.createStatement();
 			System.out.println("Enter Name");
 			String name=s.next();
@@ -237,7 +237,7 @@ public class Attendance
 		try 
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","root");
+			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","");
 			Statement st=con.createStatement();
 			ResultSet rs=st.executeQuery("select * from student");
 			System.out.printf("%-5s | %-15s | %-10s | %-20s | %-15s | %-10s%n", "ID", "Name", "Age", "Email", "Phone","Class_Attended");
@@ -261,7 +261,7 @@ public class Attendance
 		try 
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","root");
+			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","");
 			PreparedStatement st=con.prepareStatement("insert into student values(?,?,?,?,?,?)");
 			System.out.print("Enter id \t");
 			st.setInt(1, s.nextInt());
